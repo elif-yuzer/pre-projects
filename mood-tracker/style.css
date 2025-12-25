@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+            font-family: sans-serif;
+}
+.card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0,0.4 );
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+     font-size: 4rem;
+    margin-bottom: 1.2rem;
+    
+}
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    cursor: pointer;
+}
+button {
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    flex: 1;
+    transition: transform 0.1s;
+   color: white;
+}
+#beHappy {
+     background-color: #28a745;
+
+}
+#beSad {
+       background-color: #dc3545;
+}
