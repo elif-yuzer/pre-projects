@@ -3,7 +3,7 @@ const removeBtn = document.querySelector("#remove-btn");
 const sayiKutusu = document.getElementById("sayi-kutusu");
 const btnContainer=document.querySelector(".btn-container")
 
-let sayi = JSON.parse(localStorage.getItem("zikirmatik")) || 0;
+let sayi = JSON.parse(localStorage.getItem("counter")) || 0;
 
 sayiKutusu.innerText = sayi;
 
@@ -18,7 +18,7 @@ const guncelle = (miktar) => {
   } else if (sayi < 10) {
     sayiKutusu.style.color = "green";
   }
-  localStorage.setItem("zikirmatik", JSON.stringify(sayi));
+  localStorage.setItem("counter", JSON.stringify(sayi));
 };
 addBtn.addEventListener("click", () => guncelle(1));
 
@@ -29,6 +29,6 @@ btnContainer.addEventListener("click",(e)=>{
    if(tiklanan==btnContainer){
     sayi=0
     sayiKutusu.innerText=0
-    localStorage.setItem("zikirmatik",JSON.stringify(sayi))
+    localStorage.setItem("counter",JSON.stringify(sayi))
    }
 })
