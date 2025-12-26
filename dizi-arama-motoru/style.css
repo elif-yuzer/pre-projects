@@ -1,0 +1,137 @@
+@layer reset, base, layout, components;
+
+@layer {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+/* base katmanı */
+@layer base {
+  body {
+    background-color: #f3f4f6;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: #1f2937;
+  }
+}
+
+/* layout katmanı-page duzenı için */
+
+@layer layout {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+}
+
+/* bilesenler */
+@layer components {
+  /* kartın dıs cevresi */
+  .card-container {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+
+    /* container query bu kutuyu kap olarak ısaretledim buna gore sekıllensın */
+    container-type: inline-size;
+    container-name: kart;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #4f46e5, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+   .card-body{
+    display: grid;
+    gap: .5rem;
+  } 
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  }
+  button {
+    width: 100%;
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  button:hover {
+    background-color: #4338ca;
+    transform: translateY(-5px);
+  }
+  button:active {
+    transform: translateY(0);
+  }
+  .card-content {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+  }
+  .episode-card {
+    display: grid;
+    /* Varsayılan (Mobil): Resim üstte, yazı altta */
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: .9rem;
+    border: 1px solid #eee;
+  }
+  .episode-img{
+    width: 100%;
+    max-width: 250px; /* mobilde cok buyumesin */
+    margin: 0 auto;
+    border-radius: .5rem;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.0);
+  }
+  .episode-content  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Eğer kartın genişliği 400px'ten büyükse tasarımı değiştir! */
+  @container kart (min-width:400px){
+
+    .episode-card {
+      grid-template-columns: 150px 1fr;
+      text-align: left;
+      align-items: start;
+      gap: 1rem;
+  }
+  .episode-img {
+    max-width: 100%;
+    margin: 0;
+   
+  }
+
+  }
+  
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
