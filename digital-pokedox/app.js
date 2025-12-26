@@ -17,7 +17,7 @@ const veriCek = async (isim) => {
     const resimSrc = data.sprites.other.dream_world.front_default || data.sprites.front_default;
     const tur = data.types[0].type.name;
     pokeResult.innerHTML = `
-        <div class="pokemon-card theme-${tur}">
+        <div class="pokemon-card theme">
             <img class="poke-img" src="${resimSrc}" alt="${data.name}" />
             <div class="poke-info">
                 <h3>${data.name}</h3>
@@ -50,3 +50,15 @@ girilenInput.addEventListener("keydown",(e)=>{
 
 })
 
+const themeCharacter= ()=>{
+    if(tur.name=="fire"){
+        PokemonCard.classList.add("theme-fire")
+
+
+    }else if (tur.name=="grass"){
+        PokemonCard.classList.add("theme-grass")
+
+    }else if(tur.name=="water"){
+          PokemonCard.classList.add("theme-water")
+    }
+}
