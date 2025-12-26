@@ -1,0 +1,116 @@
+@layer reset, base,components;
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+@layer base {
+  body {
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #ffde00;
+    color: #333;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+}
+@layer components {
+  .pokedox-container {
+    background: #cc0000;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 5px solid #b30000;
+    text-align: center;
+    color: white;
+  }
+  h1 {
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+  }
+  p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  .search-box {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+  }
+  input {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+  }
+  button {
+    padding: .5rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: #3b4cca;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+button:hover { background-color: #2a3b9c; }
+.pokemon-card {
+    background-color: white;
+    color: black;
+    border-radius: .6rem;
+    padding: 1.2rem;
+    display: grid;
+    gap: 1rem;
+    animation:  fadeIn .5s;
+     
+}
+.poke-img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+}
+.poke-info h3 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: #333;
+
+}
+.badge {
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 1.2rem;
+    font-size: .8rem;
+    font-weight: bold;
+
+    margin-top: 5px;
+    text-align: center;
+
+}
+ .theme-fire {
+   background-color: #e3350d; 
+    color: #333;
+}
+.theme-water {
+  background-color: #3b4cca;
+     color: #333;
+    
+}
+.theme-grass {
+  background-color: #4CAF50;
+    color: #333;
+   
+}
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
