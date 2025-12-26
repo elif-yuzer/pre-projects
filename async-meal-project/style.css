@@ -1,0 +1,144 @@
+@layer reset, base,components;
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+@layer base {
+  body {
+    min-height: 100vh;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    place-content: start center;
+    gap: 1.5rem;
+    color: #1f2937;
+    background-color: #f3f4f6;
+    padding-bottom: 2rem;
+  }
+}
+@layer components {
+  header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    padding: 3rem 1rem;
+    color: white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+  header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .search-container {
+    display: grid;
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+  }
+  label {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  input {
+    padding: 1rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 10px 15px -4px rgba(168, 85, 247, 0.2);
+    outline: none;
+    transform: translateY(-2px);
+  }
+  input::placeholder {
+    color: #9ca3af;
+  }
+  .image-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 0.9rem;
+    border: 1px solid #eee;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+  .image-container img {
+    width: 100%;
+  }
+  .food-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    padding: 1rem;
+  }
+  .meal-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 200px 1fr;
+  }
+  .meal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .meal-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .meal-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .meal-info {
+    padding: 1.5rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+  }
+
+  .meal-info h3 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    font-weight: 600;
+    margin: 0;
+  }
+}
