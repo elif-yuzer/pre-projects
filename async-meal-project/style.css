@@ -85,6 +85,7 @@
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    cursor: pointer;
   }
   .image-container img {
     width: 100%;
